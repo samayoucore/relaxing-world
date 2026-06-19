@@ -1,0 +1,193 @@
+:root {
+  color-scheme: dark;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #19282b;
+  color: #f2f5ed;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app,
+.app-root,
+.game-shell {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  min-width: 960px;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.game-shell {
+  position: relative;
+  background: #26393d;
+}
+
+.game-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  touch-action: none;
+}
+
+.topbar,
+.toolbox,
+.brush-panel,
+.debug-strip,
+.toast {
+  position: absolute;
+  z-index: 10;
+  border: 1px solid rgb(255 255 255 / 14%);
+  background: rgb(24 34 35 / 78%);
+  box-shadow: 0 16px 50px rgb(0 0 0 / 22%);
+  backdrop-filter: blur(16px);
+}
+
+.topbar {
+  top: 16px;
+  left: 50%;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  transform: translateX(-50%);
+  border-radius: 8px;
+}
+
+.toolbox {
+  top: 92px;
+  left: 16px;
+  display: grid;
+  gap: 8px;
+  width: 124px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.brush-panel {
+  right: 16px;
+  bottom: 16px;
+  display: grid;
+  gap: 12px;
+  width: min(360px, calc(100vw - 48px));
+  padding: 14px;
+  border-radius: 8px;
+}
+
+.ui-button {
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: 6px;
+  color: #f4f2e8;
+  background: rgb(255 255 255 / 8%);
+  cursor: pointer;
+}
+
+.ui-button:hover,
+.ui-button.is-active {
+  background: #d1bc72;
+  color: #182322;
+}
+
+.control {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  font-size: 13px;
+  color: #dbe3dc;
+}
+
+.control input[type="range"] {
+  width: 100%;
+  accent-color: #d1bc72;
+}
+
+.select {
+  width: 100%;
+  min-height: 32px;
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: 6px;
+  color: #f4f2e8;
+  background: #253b3c;
+}
+
+.swatch-row,
+.object-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.swatch-button {
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgb(255 255 255 / 40%);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.object-row .ui-button {
+  flex: 1 1 84px;
+}
+
+.debug-strip {
+  right: 16px;
+  top: 76px;
+  max-width: calc(100vw - 210px);
+  padding: 7px 10px;
+  border-radius: 6px;
+  color: #d7e2dc;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.toast {
+  left: 50%;
+  bottom: 24px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 16px);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.loading-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  color: #f4f2e8;
+  background:
+    linear-gradient(180deg, rgb(68 104 111 / 84%), rgb(27 43 45 / 94%)),
+    #26393d;
+  transition: opacity 220ms ease;
+}
+
+.loading-screen.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}

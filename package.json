@@ -1,0 +1,44 @@
+{
+  "name": "relaxing-world",
+  "version": "0.1.0",
+  "description": "A cozy browser-based 3D world-building sandbox built with TypeScript, Vite, and Babylon.js.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "check": "npm run typecheck && npm run lint && npm run test && npm run build"
+  },
+  "keywords": [
+    "babylonjs",
+    "vite",
+    "typescript",
+    "webgl",
+    "game"
+  ],
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@babylonjs/core": "^9.13.0",
+    "@babylonjs/loaders": "^9.13.0",
+    "@babylonjs/materials": "^9.13.0"
+  },
+  "devDependencies": {
+    "@babylonjs/inspector": "^9.13.0",
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.61.0",
+    "eslint": "^10.5.0",
+    "prettier": "^3.8.4",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.61.1",
+    "vite": "^8.0.16",
+    "vitest": "^4.1.9"
+  }
+}
